@@ -1,0 +1,16 @@
+allowedFields: ['name', 'email', 'url', 'message','parentId']
+branch: master
+filename: 'entry{@timestamp}'
+format: json
+generatedFields:
+  date:
+    type: date
+    options:
+      format: "timestamp-seconds"
+  id:
+    type: "uniqueId"
+path: "{options.slug}"
+moderation: false
+requiredFields: ['name', 'email', 'message']
+transforms:
+  email: md5
